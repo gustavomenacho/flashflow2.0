@@ -1,50 +1,70 @@
-📚 FlashFlow 2.0
+# 📚 FlashFlow 2.0
 
-Aplicação Full Stack para criação e gerenciamento de flashcards de estudo.
+Aplicação Full Stack para criação e gerenciamento de flashcards de estudo.  
 O objetivo do projeto é facilitar a revisão de conteúdos através de flashcards organizados por categorias.
 
-🚀 Demonstração
+---
 
-Página principal do sistema com lista de flashcards, criação, edição, exclusão e filtro por categoria.
+## 🚀 Demonstração
 
-✨ Funcionalidades
-📌 Frontend
-Criar flashcards
-Editar flashcards existentes
-Excluir flashcards com confirmação
-Listar todos os flashcards
-Filtrar por categoria
-Visualizar pergunta e resposta com flip do card
-Interface responsiva
-Integração com API REST
-⚙️ Backend
-API REST para flashcards
-Cadastro, consulta, atualização e remoção (CRUD)
-Validação de dados obrigatórios
-Persistência com SQLite
-Estrutura organizada por camadas (controllers, routes, models)
-🧠 Conceitos aplicados
-Consumo de API REST
-CRUD completo
-Gerenciamento de estado com React Hooks
-Componentização
-Separação de responsabilidades
-Persistência de dados
-Comunicação frontend ↔ backend
-🛠️ Tecnologias
-Frontend
-React
-TypeScript
-Vite
-CSS Modules
-Backend
-Node.js
-Express
-TypeScript
-SQLite
-dotenv
-CORS
-📂 Estrutura do projeto
+![FlashFlow 2.0 - Interface principal](project-img.png)
+
+---
+
+## ✨ Funcionalidades
+
+### 📌 Frontend
+- Criar flashcards
+- Editar flashcards existentes
+- Excluir flashcards com confirmação
+- Listar todos os flashcards
+- Filtrar por categoria
+- Visualizar pergunta e resposta com flip do card
+- Interface responsiva
+- Integração com API REST
+
+### ⚙️ Backend
+- API REST para flashcards
+- Cadastro, consulta, atualização e remoção (CRUD)
+- Validação de dados obrigatórios
+- Persistência com SQLite
+- Estrutura organizada por camadas (controllers, routes, models)
+
+---
+
+## 🧠 Conceitos aplicados
+
+- Consumo de API REST
+- CRUD completo
+- Gerenciamento de estado com React Hooks
+- Componentização
+- Separação de responsabilidades
+- Persistência de dados
+- Comunicação frontend ↔ backend
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+### Frontend
+- React
+- TypeScript
+- Vite
+- CSS Modules
+
+### Backend
+- Node.js
+- Express
+- TypeScript
+- SQLite
+- dotenv
+- CORS
+
+---
+
+## 📂 Estrutura do projeto
+
+```txt
 flashflow2.0/
 │
 ├── web/
