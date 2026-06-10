@@ -1,124 +1,112 @@
 # 📚 FlashFlow 2.0
 
-Aplicação Full Stack para criação e gerenciamento de flashcards de estudo.  
-O objetivo do projeto é facilitar a revisão de conteúdos através de flashcards organizados por categorias.
+Uma aplicação Full-Stack desenvolvida para a otimização do aprendizado contínuo através da técnica de *active recall*. O ecossistema permite a criação, gerenciamento e revisão de flashcards, organizados em uma interface responsiva e alimentados por uma API REST dedicada.
 
 ---
 
-## 🚀 Demonstração
+## 🚀 Demonstração da Interface
 
-![FlashFlow 2.0 - Interface principal](project-img.png)
-
----
-
-## ✨ Funcionalidades
-
-### 📌 Frontend
-- Criar flashcards
-- Editar flashcards existentes
-- Excluir flashcards com confirmação
-- Listar todos os flashcards
-- Filtrar por categoria
-- Visualizar pergunta e resposta com flip do card
-- Interface responsiva
-- Integração com API REST
-
-### ⚙️ Backend
-- API REST para flashcards
-- Cadastro, consulta, atualização e remoção (CRUD)
-- Validação de dados obrigatórios
-- Persistência com SQLite
-- Estrutura organizada por camadas (controllers, routes, models)
+![FlashFlow 2.0 - Interface principal](./project-img.png)
 
 ---
 
-## 🧠 Conceitos aplicados
+## 🏗️ Arquitetura e Tecnologias
 
-- Consumo de API REST
-- CRUD completo
-- Gerenciamento de estado com React Hooks
-- Componentização
-- Separação de responsabilidades
-- Persistência de dados
-- Comunicação frontend ↔ backend
+O projeto adota uma arquitetura client-server, garantindo a separação estrita de responsabilidades entre a interface de usuário e a lógica de persistência de dados.
 
----
+### 🎨 Frontend (Client)
+* **React + TypeScript**: Tipagem estática para maior previsibilidade do estado.
+* **Vite**: Ferramenta de build otimizada para alta performance no desenvolvimento.
+* **CSS Modules**: Escopo local de estilização, evitando vazamento de classes.
+* **Integração**: Consumo assíncrono de API REST (CRUD completo).
 
-## 🛠️ Tecnologias utilizadas
-
-### Frontend
-- React
-- TypeScript
-- Vite
-- CSS Modules
-
-### Backend
-- Node.js
-- Express
-- TypeScript
-- SQLite
-- dotenv
-- CORS
+### ⚙️ Backend (API)
+* **Node.js + Express**: Servidor web assíncrono e orientado a eventos.
+* **TypeScript**: Manutenibilidade e contratos de dados tipados nas rotas e *controllers*.
+* **SQLite**: Banco de dados relacional leve para persistência local.
+* **CORS & Dotenv**: Gerenciamento de segurança de rotas e variáveis de ambiente.
 
 ---
 
-## 📂 Estrutura do projeto
+## ✨ Regras de Negócio e Funcionalidades
 
-```txt
+### Gestão de Flashcards
+* **Criação e Edição**: Formulários controlados para inserção e atualização de conteúdo.
+* **Organização Lógica**: Filtro de cards baseado em categorização por disciplinas/tópicos.
+* **Revisão Interativa**: Mecanismo de *flip* (frente/verso) para validação mental da resposta.
+* **Segurança de Dados**: Validação de campos obrigatórios no servidor e confirmação de exclusão no cliente (UX).
+
+---
+
+## 📂 Árvore do Projeto
+
+```text
 flashflow2.0/
 │
-├── web/
+├── web/                   # Camada de Interface (Frontend)
 │   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   ├── services/
-│   │   ├── types/
-│   │   ├── App.tsx
-│   │   └── main.tsx
+│   │   ├── assets/        # Mídias estáticas
+│   │   ├── components/    # Componentização isolada
+│   │   ├── services/      # Lógica de consumo HTTP (Axios/Fetch)
+│   │   ├── types/         # Interfaces e tipagens globais
+│   │   ├── App.tsx        # Ponto de montagem das rotas/estado global
+│   │   └── main.tsx       # Entry point do React
 │
-├── server/
+├── server/                # Camada Lógica (Backend API)
 │   ├── src/
-│   │   ├── controllers/
-│   │   ├── database/
-│   │   ├── routes/
-│   │   ├── models/
-│   │   └── server.ts
+│   │   ├── controllers/   # Regras de negócio do CRUD
+│   │   ├── database/      # Conexão e queries SQLite
+│   │   ├── routes/        # Mapeamento de endpoints HTTP
+│   │   └── server.ts      # Entry point da API (Express)
 │
+├── project-img.png
 └── README.md
-⚙️ Como executar o projeto
-1. Clonar o repositório
-git clone <repo-url>
+```
+
+---
+
+## ⚙️ Pipeline de Instalação e Execução
+
+### 1. Clonagem e Configuração Inicial
+```bash
+git clone <URL_DO_REPOSITORIO>
 cd flashflow2.0
-2. Backend
+```
+
+### 2. Variáveis de Ambiente
+Antes de iniciar os servidores, crie os arquivos `.env` em seus respectivos diretórios:
+
+**No diretório `server/`**, crie o arquivo `.env`:
+```env
+PORT=3000
+DATABASE_URL=./database.sqlite
+```
+
+**No diretório `web/`**, crie o arquivo `.env`:
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+### 3. Inicializando o Backend (API)
+Abra um terminal, navegue até a camada do servidor e instale as dependências:
+```bash
 cd server
 npm install
 npm run dev
+```
+> **Status**: O servidor estará ouvindo requisições na porta `http://localhost:3000`
 
-Servidor:
-
-http://localhost:3000
-3. Frontend
+### 4. Inicializando o Frontend (Client)
+Em um segundo terminal, navegue até a camada web e instale as dependências:
+```bash
 cd web
 npm install
 npm run dev
+```
+> **Status**: A interface estará disponível no navegador em `http://localhost:5173`
 
-Aplicação:
+---
 
-http://localhost:5173
-🔐 Variáveis de ambiente
-Backend (.env)
-PORT=3000
-DATABASE_URL=./database.sqlite
-Frontend (.env)
-VITE_API_URL=http://localhost:3000
-📌 Destaques do projeto
-Projeto full stack funcional
-API REST própria
-Interface moderna e responsiva
-Estrutura escalável e organizada
-Integração real frontend + backend
-👨‍💻 Autor
+## 👨‍💻 Autor
 
-Gustavo Menacho de Almeida
-
-Projeto desenvolvido para prática de desenvolvimento Full Stack com foco em aprendizado e portfólio.
+**Gustavo Menacho de Almeida** Projeto desenvolvido para consolidar a aplicação de conceitos de Engenharia de Software no desenvolvimento Full-Stack, focando em estruturação de código, componentização e consumo de APIs.
