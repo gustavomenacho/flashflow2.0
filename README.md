@@ -1,216 +1,104 @@
-# 📚 FlashFlow 2.0
+📚 FlashFlow 2.0
 
-Aplicação Full Stack para gerenciamento de flashcards de estudo, desenvolvida com React, TypeScript, Node.js, Express e SQLite.
+Aplicação Full Stack para criação e gerenciamento de flashcards de estudo.
+O objetivo do projeto é facilitar a revisão de conteúdos através de flashcards organizados por categorias.
 
-O sistema permite criar, editar, remover e revisar flashcards organizados por categorias, facilitando o estudo e a revisão de conteúdos através da técnica de repetição ativa.
+🚀 Demonstração
 
-![Página principal do projeto](project-img.png)
+Página principal do sistema com lista de flashcards, criação, edição, exclusão e filtro por categoria.
 
----
-
-# 🚀 Funcionalidades
-
-## Front-end
-
-* Criar flashcards
-* Editar flashcards existentes
-* Excluir flashcards com confirmação
-* Listar todos os flashcards cadastrados
-* Filtrar flashcards por categoria
-* Visualizar perguntas e respostas através do flip do card
-* Interface responsiva
-* Integração com a API do back-end
-
-## Back-end
-
-* Cadastro de flashcards
-* Consulta de flashcards
-* Atualização de flashcards
-* Remoção de flashcards
-* Validação de campos obrigatórios
-* Categorias pré-definidas
-* Retorno de dados em formato JSON
-* Persistência utilizando SQLite
-
----
-
-# 🛠️ Tecnologias Utilizadas
-
-## Front-end
-
-* React
-* TypeScript
-* Vite
-* CSS Modules
-
-## Back-end
-
-* Node.js
-* Express
-* TypeScript
-* SQLite
-* CORS
-* dotenv
-
----
-
-# 📂 Estrutura do Projeto
-
-```txt
-flashflow2.0
+✨ Funcionalidades
+📌 Frontend
+Criar flashcards
+Editar flashcards existentes
+Excluir flashcards com confirmação
+Listar todos os flashcards
+Filtrar por categoria
+Visualizar pergunta e resposta com flip do card
+Interface responsiva
+Integração com API REST
+⚙️ Backend
+API REST para flashcards
+Cadastro, consulta, atualização e remoção (CRUD)
+Validação de dados obrigatórios
+Persistência com SQLite
+Estrutura organizada por camadas (controllers, routes, models)
+🧠 Conceitos aplicados
+Consumo de API REST
+CRUD completo
+Gerenciamento de estado com React Hooks
+Componentização
+Separação de responsabilidades
+Persistência de dados
+Comunicação frontend ↔ backend
+🛠️ Tecnologias
+Frontend
+React
+TypeScript
+Vite
+CSS Modules
+Backend
+Node.js
+Express
+TypeScript
+SQLite
+dotenv
+CORS
+📂 Estrutura do projeto
+flashflow2.0/
 │
-├── web
-│   ├── src
-│   │   ├── assets
-│   │   ├── components
-│   │   │   ├── Button
-│   │   │   ├── Filter
-│   │   │   ├── Flashcard
-│   │   │   ├── FlashcardForm
-│   │   │   ├── FlashcardModal
-│   │   │   ├── Modal
-│   │   │   └── NewFlashcardButton
-│   │   ├── services
-│   │   ├── types
+├── web/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── types/
 │   │   ├── App.tsx
 │   │   └── main.tsx
-│   │
-│   └── package.json
 │
-├── server
-│   ├── src
-│   │   ├── controllers
-│   │   ├── database
-│   │   ├── models
-│   │   ├── routes
-│   │   ├── utils
+├── server/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── database/
+│   │   ├── routes/
+│   │   ├── models/
 │   │   └── server.ts
-│   │
-│   ├── package.json
-│   └── .env.example
 │
 └── README.md
-```
+⚙️ Como executar o projeto
+1. Clonar o repositório
+git clone <repo-url>
+cd flashflow2.0
+2. Backend
+cd server
+npm install
+npm run dev
 
----
+Servidor:
 
-# ⚙️ Configuração do Ambiente
-
-## Instalar dependências
-
-### Front-end
-
-```bash
+http://localhost:3000
+3. Frontend
 cd web
 npm install
-```
+npm run dev
 
-### Back-end
+Aplicação:
 
-```bash
-cd ../server
-npm install
-```
-
----
-
-# 🔐 Variáveis de Ambiente
-
-## Back-end
-
-Crie um arquivo `.env` baseado no arquivo `.env.example`.
-
-Exemplo:
-
-```env
+http://localhost:5173
+🔐 Variáveis de ambiente
+Backend (.env)
 PORT=3000
 DATABASE_URL=./database.sqlite
-```
-
-## Front-end
-
-Crie um arquivo `.env` dentro da pasta `web`.
-
-Exemplo:
-
-```env
+Frontend (.env)
 VITE_API_URL=http://localhost:3000
-```
+📌 Destaques do projeto
+Projeto full stack funcional
+API REST própria
+Interface moderna e responsiva
+Estrutura escalável e organizada
+Integração real frontend + backend
+👨‍💻 Autor
 
----
+Gustavo Menacho de Almeida
 
-# ▶️ Executando o Projeto
-
-## Iniciar o Back-end
-
-```bash
-cd server
-npm run dev
-```
-
-## Iniciar o Front-end
-
-Em outro terminal:
-
-```bash
-cd web
-npm run dev
-```
-
----
-
-# 🌐 Acesso
-
-Após iniciar os serviços:
-
-### Front-end
-
-```txt
-http://localhost:5173
-```
-
-### API
-
-```txt
-http://localhost:3000/flashcards
-```
-
----
-
-# 📖 Fluxo da Aplicação
-
-```txt
-Usuário
-   ↓
-Interface React
-   ↓
-API (fetch)
-   ↓
-Node.js + Express
-   ↓
-SQLite
-   ↓
-Resposta JSON
-   ↓
-Atualização da Interface
-```
-
----
-
-# 🎯 Conceitos Utilizados
-
-* Componentização com React
-* Gerenciamento de estado com Hooks
-* Comunicação entre Front-end e Back-end
-* Operações CRUD
-* Consumo de APIs REST
-* Organização de código por responsabilidades
-* Persistência de dados com SQLite
-
----
-
-# 👨‍💻 Autor
-
-**Gustavo Menacho de Almeida**
-
-Projeto desenvolvido para fins acadêmicos e prática de desenvolvimento Full Stack.
+Projeto desenvolvido para prática de desenvolvimento Full Stack com foco em aprendizado e portfólio.
