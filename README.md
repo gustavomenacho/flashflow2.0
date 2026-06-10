@@ -69,20 +69,20 @@ flashflow2.0/
 
 ### 1. Clonagem e Configuração Inicial
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/gustavomenacho/flashflow2.0.git
 cd flashflow2.0
 ```
 
 ### 2. Variáveis de Ambiente
 Antes de iniciar os servidores, crie os arquivos `.env` em seus respectivos diretórios:
 
-**No diretório `server/`**, crie o arquivo `.env`:
+**No diretório `server/`, crie o arquivo `.env`:**
 ```env
 PORT=3000
 DATABASE_URL=./database.sqlite
 ```
 
-**No diretório `web/`**, crie o arquivo `.env`:
+**No diretório `web/`, crie o arquivo `.env`:**
 ```env
 VITE_API_URL=http://localhost:3000
 ```
