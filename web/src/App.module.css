@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--text-font);
+}
+
+.generalWrapper {
+  background-color: var(--bg-color);
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    font-family: var(--title-font);
+    font-size: var(--text-lg);
+    font-weight: 800;
+    letter-spacing: -0.0375rem;
+    color: #2A3439;
+    margin-left: 0.5rem;
+
+    @media (max-width: 400px) {
+      display: none;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+  }
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  span {
+    color: var(--purple-300);
+    font-size: .625rem;
+    letter-spacing: .065rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    color: var(--gray-200);
+    font-size: var(--title);
+
+    @media (max-width: 600px) {
+      font-size: var(--text-lg);
+    }
+  }
+}
+
+.cardsArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  flex: 1;
+  overflow-y: auto;
+}
+
+.flashcardsArea {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.emptyArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 2rem;
+
+  .empty {
+    color: #717C82;
+    font-size: var(--text-sm);
+    line-height: 1.2;
+    text-align: center;
+    max-width: 400px;
+  }
+}
+
+.newCard {
+  background-color: var(--white);
+  border: 1px dashed #A9B4B9;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-height: 220px;
+  padding: 2rem;
+  cursor: pointer;
+
+  h3 {
+    font-family: var(--title-font);
+    color: #566166;
+    font-size: 1.125rem;
+    font-weight: 800;
+  }
+
+  p {
+    color: #717C82;
+    font-size: .75rem;
+    text-align: center;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 550px) {
+    padding: 1rem;
+  }
+}
+
+.deleteModal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 450px;
+
+  img {
+    width: 48px;
+    height: 48px;
+    align-self: center;
+  }
+}
+
+.textArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  text-align: center;
+
+  h3 {
+    font-family: var(--title-font);
+    font-size: var(--text-lg);
+    font-weight: 900;
+  }
+
+  p {
+    font-size: var(--text-sm);
+    color: #566166
+  }
+}
+
+.deleteActions {
+  display: flex;
+  gap: .75rem;
+
+  button {
+    padding: 1rem 0;
+    border-radius: 3.125rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: var(--button);
+    width: 100%;
+  }
+}
+
+.cancelBtn {
+  background: #E1E9EE;
+  color: #566166;
+}
+
+.deleteBtn {
+  background-color: #9E3F4E;
+  color: var(--white)
+}

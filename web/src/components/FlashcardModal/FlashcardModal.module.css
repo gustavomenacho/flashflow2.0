@@ -1,0 +1,93 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form h2 {
+  font-size: var(--text-lg);
+  font-family: var(--title-font);
+  font-weight: 900;
+}
+
+.form p {
+  font-size: var(--text-md);
+  color: #566166;
+}
+
+.form input,
+.form textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.form textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.componentArea {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.selectWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+
+.selectWrapper img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+.selectWrapper select {
+  border: none;
+  outline: none;
+  background: transparent;
+
+  width: 100%;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.form label {
+  font-size: .625rem;
+  font-weight: 600;
+  color: #566166;
+  text-transform: uppercase;
+  letter-spacing: 1.04px;
+}
+
+.form button {
+  padding: 1rem 0;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: var(--button);
+  width: 100%;
+}
+
+.actionArea {
+  display: flex;
+  gap: .75rem;
+}
+
+.cancelBtn {
+  background: #E1E9EE;
+  color: #566166;
+}
+
+.saveBtn {
+  background: var(--gradient);
+  color: var(--white);
+}
